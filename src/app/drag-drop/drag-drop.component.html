@@ -1,0 +1,24 @@
+<div class="bg-color">
+    <div class="container">
+        <div style="display: flex;
+        flex-direction: row;
+        gap: 26px;">
+         <div class="box-model" (drop)="drop($event)" (dragover)="allowDrop($event)">
+            <div class="box-header">Menu List</div>
+            <div class="item-list-align">
+             <ng-container *ngFor="let list of draggableList">
+              <div [id]="list.id" class="section box-header" [draggable]="true" (dragstart)="drag($event)">
+                <div class ="gap" >{{list.menuName}}</div><img [src]="list.imgPath" [alt]="list.alt" width="27px" height="23px">
+              </div>
+             </ng-container>
+            </div>         
+         </div>
+         <div class="box-model" (drop)="drop($event)" (dragover)="allowDrop($event)">
+          <div class="box-header">Ordered List</div>
+          <div class="item-list-align"></div>
+         </div>
+         </div>
+
+    </div>
+    </div>
+
